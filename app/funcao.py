@@ -1,2 +1,2 @@
 def ola_turma():
-    pass
+    return "ola turma"
