@@ -1,11 +1,11 @@
 import os
 from pathlib import Path
+
 import pandas as pd
 import pandera as pa
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-from schema import ProdutoSchema, ProductSchemaKPI
 
 def load_settings():
     """Carrega as configurações a partir de variáveis de ambiente."""
@@ -21,7 +21,6 @@ def load_settings():
     }
     return settings
 
-pa.check_schema(ProdutoSchema)
 def extrair_do_sql(query: str) -> pd.DataFrame:
 
     settings = load_settings()
